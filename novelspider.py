@@ -14,7 +14,7 @@ class NovelDownload(Process):
     def run(self):
         print('%s 开始' % self.name)
         time.sleep(1)
-        while 1:
+        while 1:        
             if self.url_queue.empty():
                 break
             book = self.url_queue.get()
@@ -79,7 +79,7 @@ class NovelDownload(Process):
 
 
 def create_pool(url_queue):
-    pool_list = []
+    pool_list = [] 
     pool_name = ['进程1', '进程2', '进程3', '进程4']
     for name in pool_name:
         p = NovelDownload(name, url_queue)
